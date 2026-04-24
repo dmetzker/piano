@@ -1,3 +1,10 @@
+#ada {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    border: 1px black solid;
+}
+
 .keyboard {
     width: 610px;
     height: 420px;

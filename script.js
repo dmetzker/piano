@@ -41,3 +41,4 @@ document.addEventListener('keydown', keyPressedDown);
 document.addEventListener('keyup', keyPressedUp);
 document.addEventListener('mousedown', mouseClickDown);
 document.addEventListener('mouseup', mouseClickUp);
+
