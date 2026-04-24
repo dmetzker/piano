@@ -1,31 +1,43 @@
-function keyPressedDown(eventObj) {
-    if(eventObj.key === 'c') {
-        document.querySelector('#c').style.backgroundColor = 'cyan';
-    }
-    if(eventObj.key === 'd') {
-        document.querySelector('#d').style.backgroundColor = 'cyan';
-    }
-    if(eventObj.key === 'r') {
-        document.querySelector('#d-sharp').style.backgroundColor = 'cyan';
-    }
-    if(eventObj.key === 'e') {
-        document.querySelector('#e').style.backgroundColor = 'cyan';
-    }
+const keyMap = {
+    'c': '#c',
+    'd': '#d',
+    'r': '#d-sharp',
+    'e': '#e',
+    'd-sharp': '#d-sharp',
 }
-function keyPressedUp(eventObj) {
-    if(eventObj.key === 'c') {
-        document.querySelector('#c').style.backgroundColor = '';
-    }
-    if(eventObj.key === 'd') {
-        document.querySelector('#d').style.backgroundColor = '';
-    }
-    if(eventObj.key === 'r') {
-        document.querySelector('#d-sharp').style.backgroundColor = '';
-    }
-    if(eventObj.key === 'e') {
-        document.querySelector('#e').style.backgroundColor = '';
+
+
+function keyPressedDown(eventObj) {
+     const id = keyMap[eventObj.key];
+    if (id) {
+        document.querySelector(id).style.backgroundColor = 'cyan';
     }
 }
 
-window.addEventListener('keydown', keyPressedDown);
-window.addEventListener('keyup', keyPressedUp);
+function keyPressedUp(eventObj) {
+    const id = keyMap[eventObj.key];
+    if (id) {
+        document.querySelector(id).style.backgroundColor = '';
+    }
+}
+
+function mouseClickDown(eventObj) {
+    const id = keyMap[eventObj.target.id];
+    const pianoContainer = document.querySelector('.keyboard');
+    if (id) {
+        pianoContainer.querySelector(id).style.backgroundColor = 'cyan';
+    }
+}
+
+function mouseClickUp(eventObj) {
+    const id = keyMap[eventObj.target.id];
+    const pianoContainer = document.querySelector('.keyboard');
+     if (id) {
+        pianoContainer.querySelector(id).style.backgroundColor = '';
+    }
+}
+
+document.addEventListener('keydown', keyPressedDown);
+document.addEventListener('keyup', keyPressedUp);
+document.addEventListener('mousedown', mouseClickDown);
+document.addEventListener('mouseup', mouseClickUp);
