@@ -1,0 +1,71 @@
+#nav-bar {
+    list-style: none;
+    display: flex;
+    height: 50px;
+    justify-content:right;
+    align-items: center;
+    background-color: lightgray;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+#nav-bar li {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#nav-bar li a {
+    text-decoration: none;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#ada-title {
+    margin-right: auto;
+}
+
+#nav-bar li:not(#ada-title):hover {
+    background-color: aqua;
+}
+
+/***********************************************************/
+/*About me*/
+
+#aboutMe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#aboutMe div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#aboutMe div img {
+    width: 100%;
+    height: auto;
+}
+
+/***********************************************************/
+/*Projects*/
+
+#projects div h3 {
+    display: inline-block;
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#projects div h3:hover {
+    background-color: beige;
+    cursor: pointer;
+}
